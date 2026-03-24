@@ -2,24 +2,26 @@
 # DOCUMENTACAO DO SCRIPT
 # ============================================================
 # Arquivo: 01_introducao.R
-# Autor(a): <seu nome>
-# Data: <dd/mm/aaaa>
+# Autor(a): Kerollayne
+# Data: 24/03/2026
 # Objetivo: entender os fundamentos da linguagem R
 
 
 # ATALHO PARA CRIAR SEÇÕS DE CÓDIGO: CTRL + SHIFT + R
 
-# ==========================================
-# BLOCO 0 - Configuracoes globais
-# ==========================================
+
+# Configuracoes globais ---------------------------------------------------
+
+
 
 # Ajusta localidade para portugues (datas, mensagens e formatos)
 Sys.setlocale("LC_ALL", "pt_BR.UTF-8")
 
 
-# ==========================================
-# BLOCO 1 - R como uma grande calculadora
-# ==========================================
+
+# R como uma grande calculadora -------------------------------------------
+
+
 
 # Carrega o pacote se ele tiver sido instalado
 library(tidyverse)
@@ -73,9 +75,10 @@ sqrt(225)
 round(3.14159, digits = 2)
 
 
-# ============================================================
-# BLOCO 2 - Tipos Atômicos e classes
-# ============================================================
+
+# Tipos Atômicos e classes ------------------------------------------------
+
+
 
 # Os tipos de dados definem como os dados
 # são armazenados na memória.
@@ -113,9 +116,10 @@ f <- as.numeric(c)
 f
 
 
-# ============================================================
-# BLOCO 3 - Vetores numericos e vetorizacao
-# ============================================================
+
+# Vetores numericos e vetorizacao -----------------------------------------
+
+
 
 # Atalho de teclado para inserir <- :
 # Alt + - (Windows/Linux)
@@ -167,9 +171,10 @@ max(receita_diaria)
 ?length
 
 
-# ============================================================
-# BLOCO 4 - Vetores
-# ============================================================
+
+# Vetores -----------------------------------------------------------------
+
+
 
 # vetor de caracteres (strings) com nome da empresa
 nome_empresa <- c("Loja A", "Loja B", "Loja C")
@@ -186,10 +191,10 @@ meta_batida
 class(meta_batida)
 
 
-# ============================================================
-# BLOCO 5 - Criando uma tibble com dados ficticios de vendas
-# e primeiros exemplos com dplyr
-# ============================================================
+
+# Criando uma tibble com dados ficticios de vendas # e primeiros e --------
+
+
 
 # Neste bloco vamos criar um pequeno conjunto de dados
 # semelhante a um banco de dados simples de vendas.
@@ -326,24 +331,6 @@ vendas_diarias |>
 
 
 # ------------------------------------------------------------
-# Boas práticas no RStudio
-# ------------------------------------------------------------
-
-# LEMBRAR DE MOSTRAR PARA OS ALUNOS:
-
-# 1) Configurar o RStudio para usar o pipe nativo |>
-
-# 2) Atalho de teclado para inserir pipe
-# Ctrl + Shift + M (Windows/Linux)
-
-# 3) Formatar código automaticamente
-# Code -> Reformat Selection
-
-# 4) (OPCIPONAL) Mostrar como reorganizar os painéis do RStudio
-# Console, Environment, Source, Files etc.
-
-
-# ------------------------------------------------------------
 # Exemplo 1 - selecionar e ordenar dados
 # ------------------------------------------------------------
 
@@ -409,9 +396,9 @@ vendas_diarias |>
   arrange(desc(receita_media))
 
 
-# ============================================================
-# BLOCO 7 - Visualizacao de dados com ggplot2
-# ============================================================
+
+# Visualizacao de dados com ggplot2 ---------------------------------------
+
 
 # Grafico 1 de barras da receita media por loja
 ggplot(receita_por_loja, aes(x = loja, y = receita_media)) +
@@ -447,9 +434,9 @@ ggplot(vendas_diarias, aes(x = data, y = lucro, size = receita, color = loja)) +
   geom_point()
 
 
-# ============================================================
-# BLOCO 8 - Resolução dos exercícios propostos nos slides
-# ============================================================
+
+# Resolução dos exercícios da lista 1 -------------------------------------
+
 
 
 # Solução do Ex. 1
