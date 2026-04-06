@@ -163,8 +163,92 @@ dados_vendas_limpos |>
   select(cidade, produto, categoria_receita)
   
   
-  
-  
+
+# As funções summarise e group_by -----------------------------------------
+
+# calcula a receita média
+dados_vendas_limpos |> 
+  summarise(receita_media = mean(receita))
+
+# calcula a receita total
+dados_vendas_limpos |> 
+  summarise(receita_total = sum(receita))
+
+# calcula o número de representantes distintos nos dados
+dados_vendas_limpos |> 
+  summarise(numero_representates = n_distinct(representante))
+
+# calcula o número total de vendas realizadas
+dados_vendas_limpos |> 
+  summarise(total_vendas = n())
+
+# calcula a receita média por cidade
+dados_vendas_limpos |>
+  group_by(cidade) |> 
+  summarise(receita_media = mean(receita))
+
+# calcula a receita média por produto 
+dados_vendas_limpos |> 
+  group_by(produto) |> 
+  summarise(receita_media = mean(receita))
+
+# calcula a receita médiua por cidade e produto
+dados_vendas_limpos |> 
+  group_by(cidade, produto) |> 
+  summarise(receita_media = mean(receita))
+
+
+# A função arramge --------------------------------------------------------
+
+# ordena os dados por receita rm ordem crescente
+dados_vendas_limpos |> 
+  arrange(receita)
+
+# ordena os dados por receita em ordem deceresente 
+dados_vendas_limpos |> 
+  arrange(desc(receita))
+
+# ordena a receita média por cidade em ordem crescente
+dados_vendas_limpos |>
+  group_by(cidade) |>
+  summarise(receita_media = mean(receita)) |>
+  arrange(receita_media)
+
+# ordena a receita média por cidade em ordem decrescente
+# salva o resultado em um novo objeto
+receita_media_cidade <-
+  dados_vendas_limpos |>
+  group_by(cidade) |>
+  summarise(receita_media = mean(receita)) |>
+  arrange(desc(receita_media))
+
+# exibe o resultado
+receita_media_cidade
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
