@@ -81,7 +81,7 @@ dados_vendas_limpos <- readr::read_rds(caminho_rds)
 
 # A função filter ---------------------------------------------------------
 
-# filtra as vendas realizadas na cidade ede "Formiga"
+# filtra as vendas realizadas na cidade de "Formiga"
 dados_vendas_limpos |> 
   filter(cidade == "Formiga")
   
